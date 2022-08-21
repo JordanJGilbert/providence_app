@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+%}
+<form method="POST">
+  <h3 align="center">Fasting BG: Insulin Adjustment Calculator</h3>
+  <div class="form-group">
+    <label for="sugar">Blood Sugar</label>
+    <input
+      type="sugar"
+      class="form-control"
+      id="sugar"
+      name="sugar"
+      placeholder="Enter blood sugar"
+    />
+  </div>
+  <div class="form-group">
+    <label for="basal-insulin">Basal Insulin</label>
+    <input
+      type="basal-insulin"
+      class="form-control"
+      id="basal-insulin"
+      name="basal-insulin"
+      placeholder="Enter basal insulin"
+    />
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br>
+{% if basal_insulin != "" %}
+<div class="alert alert-primary" role="alert">
+  {{basal_insulin}}
+</div>
+{% endif %}
+{% endblock %}
